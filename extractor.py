@@ -1,4 +1,4 @@
-from number import NUMBER
+from words_to_numbers_ru.number import NUMBER
 from natasha.extractors import Extractor
 from yargy.parser import Match
 
