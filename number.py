@@ -80,7 +80,7 @@ MULTIPLIER = or_(
     MILLIARD,
     TRILLION
 ).interpretation(Number.multiplier)
-NUM_RAW = rule(caseless_pipeline(NUMS_RAW).interpretation(Number.int.normalized().custom(NUMS_RAW.get)))
+NUM_RAW = rule(morph_pipeline(NUMS_RAW).interpretation(Number.int.normalized().custom(NUMS_RAW.get)))
 NUM_INT = rule(INT).interpretation(Number.int.custom(int))
 NUM = or_(
     NUM_RAW,
