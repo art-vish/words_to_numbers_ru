@@ -53,6 +53,7 @@ INT = type('INT')
 THOUSANDTH = rule(caseless_pipeline(['тысячных', 'тысячная'])).interpretation(const(10**-3))
 HUNDREDTH = rule(caseless_pipeline(['сотых', 'сотая'])).interpretation(const(10**-2))
 TENTH = rule(caseless_pipeline(['десятых', 'десятая'])).interpretation(const(10**-1))
+WHOLE = rule(caseless_pipeline(['целых', 'целая'])).interpretation(const(1))
 THOUSAND = or_(
     rule(caseless('т'), DOT),
     rule(caseless('тыс'), DOT.optional()),
@@ -75,6 +76,7 @@ MULTIPLIER = or_(
     THOUSANDTH,
     HUNDREDTH,
     TENTH,
+    WHOLE,
     THOUSAND,
     MILLION,
     MILLIARD,
